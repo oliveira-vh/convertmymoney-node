@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 app.get('/cotacao', (req, res) => {
     const { cotacao, quantidade } = req.query;
-    if(cotacao && quantidade && typeof cotacao == 'number' && typeof quantidade == 'number'){
+    if(cotacao && quantidade){
         const conversao = convert.conversao(cotacao, quantidade);
         res.render('cotacao',{
             error: false,
